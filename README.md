@@ -1,35 +1,35 @@
-# 御坂妹妹们的Linux VPS工具箱
+# Kotak Alat VPS Linux Misaka Sisters
 
-为了方便妹妹们更好的管理他们的服务器，姐姐大人为您们写好了一键管理脚本了
+Untuk memfasilitasi para suster untuk mengelola server mereka dengan lebih baik, saudara perempuan saya telah menulis skrip manajemen satu klik untuk Anda.
 
-虽然目前我给你们一键管理的功能并不多，但是我有时间还是给你们准备的啦！
+Meskipun tidak banyak fungsi yang dapat saya berikan kepada Anda manajemen satu klik, tetapi saya punya waktu untuk mempersiapkannya untuk Anda!
 
 ![image.png](https://s2.loli.net/2021/12/26/WkiwbdExvnGAXCh.png)
 
-## 使用方法
+## instruksi
 
-1. 给这个项目一个Star 
-2. 用SSH客户端连接上VPS，输入以下命令（若不是root用户请先`sudo -i`提权）
+1. Berikan proyek ini Bintang 
+2. Gunakan klien SSH untuk terhubung ke VPS dan masukkan perintah berikut (jika Anda bukan pengguna root, silakan `sudo -i` untuk mengeskalasi hak istimewa)
 
 ```shell
 wget -N --no-check-certificate https://raw.githubusercontents.com/Misaka-blog/MisakaLinuxToolbox/master/MisakaToolbox.sh && bash MisakaToolbox.sh
 ```
 
-第一次运行以后，可用快捷方式启动
+Setelah lari pertama, pintasan dapat digunakan untuk memulai
 ```bash
 bash MisakaToolbox.sh
 ```
 
-## 工具箱功能提议
+## Proposal Fitur Kotak Alat
 
-想要工具箱添加新的功能？有以下两种方式可以选择：
-1. 自行修改代码后提交 [Pull Request](https://github.com/Misaka-blog/MisakaLinuxToolbox/pulls)
-2. 提交一个 [Discussion](https://github.com/Misaka-blog/MisakaLinuxToolbox/discussions/20)  
-开发者们看到后会尽快添加~
+Ingin menambahkan fungsionalitas baru ke kotak alat? Ada dua cara untuk memilih:
+1. Kirim setelah memodifikasi kode sendiri [Pull Request](https://github.com/Misaka-blog/MisakaLinuxToolbox/pulls)
+2. Kirim [Discussion](https://github.com/Misaka-blog/MisakaLinuxToolbox/discussions/20)  
+Pengembang akan menambahkannya segera setelah mereka melihatnya~
 
-## 来自姐姐大人的更新日志
+## Changelog dari kakak perempuan saya
 
-Ver 3.0 重构工具箱菜单、原功能不变
+Ver 3.0 Menu toolbox refactoring, fungsi asli tidak berubah
 
 <details>
     <summary>历史更新记录（点击展开）</summary>
@@ -95,9 +95,9 @@ Ver 1.2: 添加流媒体检测，三网测速脚本
 Ver 1.1: 添加BBR及宝塔开心版、Docker安装脚本
 </details>
 
-## 感谢列表
+## Daftar terima kasih
 
-感谢他们的贡献，让脚本得到进一步完善
+Terima kasih atas kontribusi mereka untuk lebih meningkatkan skrip
 <details>
     <summary>点击展开</summary>
 
