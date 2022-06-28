@@ -1,7 +1,7 @@
 #!/bin/bash
 
 version="v3.0"
-version_log="重构工具箱脚本菜单、原功能不变"
+version_log="Memfaktorkan ulang menu skrip kotak peralatan, fungsi aslinya tetap tidak berubah."
 
 RED="\033[31m"
 GREEN="\033[32m"
@@ -45,20 +45,20 @@ for ((int = 0; int < ${#REGEX[@]}; int++)); do
     fi
 done
 
-[[ $EUID -ne 0 ]] && red "注意：请在root用户下运行脚本" && exit 1
-[[ -z $SYSTEM ]] && red "不支持VPS的当前系统，请使用主流操作系统" && exit 1
+[[ $EUID -ne 0 ]] && red "Catatan: Silakan jalankan skrip di bawah pengguna root" && exit 1
+[[ -z $SYSTEM ]] && red "Sistem saat ini yang tidak mendukung VPS, silakan gunakan sistem operasi mainstream" && exit 1
 
 check_status(){
-    yellow "正在检查VPS系统状态..."
+    yellow "Memeriksa status sistem VPS..."
     if [[ -z $(type -P curl) ]]; then
-        yellow "检测curl未安装，正在安装中..."
+        yellow "Mendeteksi bahwa curl tidak diinstal, sedang diinstal ..."
         if [[ ! $SYSTEM == "CentOS" ]]; then
             ${PACKAGE_UPDATE[int]}
         fi
         ${PACKAGE_INSTALL[int]} curl
     fi
     if [[ -z $(type -P sudo) ]]; then
-        yellow "检测sudo未安装，正在安装中..."
+        yellow "Deteksi sudo tidak diinstal, instal ..."
         if [[ ! $SYSTEM == "CentOS" ]]; then
             ${PACKAGE_UPDATE[int]}
         fi
@@ -69,7 +69,7 @@ check_status(){
     IPv6Status=$(curl -s6m8 https://www.cloudflare.com/cdn-cgi/trace -k | grep warp | cut -d= -f2)
 
     if [[ $IPv4Status =~ "on"|"plus" ]] || [[ $IPv6Status =~ "on"|"plus" ]]; then
-        # 关闭Wgcf-WARP，以防识别有误
+        # Matikan Wgcf-WARP jika terjadi salah pengenalan
         wg-quick down wgcf >/dev/null 2>&1
         v66=`curl -s6m8 https://ip.gs -k`
         v44=`curl -s4m8 https://ip.gs -k`
@@ -80,16 +80,16 @@ check_status(){
     fi
 
     if [[ $IPv4Status == "off" ]]; then
-        w4="${RED}未启用WARP${PLAIN}"
+        w4="${RED}WARP tidak diaktifkan${PLAIN}"
     fi
     if [[ $IPv6Status == "off" ]]; then
-        w6="${RED}未启用WARP${PLAIN}"
+        w6="${RED}WARP tidak diaktifkan${PLAIN}"
     fi
     if [[ $IPv4Status == "on" ]]; then
-        w4="${YELLOW}WARP 免费账户${PLAIN}"
+        w4="${YELLOW}Akun Gratis WARP${PLAIN}"
     fi
     if [[ $IPv6Status == "on" ]]; then
-        w6="${YELLOW}WARP 免费账户${PLAIN}"
+        w6="${YELLOW}Akun Gratis WARP${PLAIN}"
     fi
     if [[ $IPv4Status == "plus" ]]; then
         w4="${GREEN}WARP+ / Teams${PLAIN}"
@@ -98,7 +98,7 @@ check_status(){
         w6="${GREEN}WARP+ / Teams${PLAIN}"
     fi
 
-    # VPSIP变量说明：0为纯IPv6 VPS、1为纯IPv4 VPS、2为原生双栈VPS
+    # Deskripsi variabel VPSIP: 0 adalah VPS IPv6 murni, 1 adalah VPS IPv4 murni, 2 adalah VPS dual-stack asli
     if [[ -n $v66 ]] && [[ -z $v44 ]]; then
         VPSIP=0
     elif [[ -z $v66 ]] && [[ -n $v44 ]]; then
@@ -125,16 +125,16 @@ check_status(){
     fi
 
     if [[ -z $s5s ]] || [[ $s5s == "off" ]]; then
-        s5="${RED}未启动${PLAIN}"
+        s5="${RED}Belum dimulai${PLAIN}"
     fi
     if [[ -z $w5s ]] || [[ $w5s == "off" ]]; then
-        w5="${RED}未启动${PLAIN}"
+        w5="${RED}Belum dimulai${PLAIN}"
     fi
     if [[ $s5s == "on" ]]; then
-        s5="${YELLOW}WARP 免费账户${PLAIN}"
+        s5="${YELLOW}Akun Gratis WARP${PLAIN}"
     fi
     if [[ $w5s == "on" ]]; then
-        w5="${YELLOW}WARP 免费账户${PLAIN}"
+        w5="${YELLOW}Akun Gratis WARP${PLAIN}"
     fi
     if [[ $s5s == "plus" ]]; then
         s5="${GREEN}WARP+ / Teams${PLAIN}"
@@ -157,7 +157,7 @@ open_ports(){
     iptables -F 2>/dev/null
     iptables -X 2>/dev/null
     netfilter-persistent save 2>/dev/null
-    green "VPS的防火墙端口已放行！"
+    green "Port firewall VPS telah dirilis!"
 }
 
 bbr_script(){
@@ -166,13 +166,13 @@ bbr_script(){
     if [[ ${virt} =~ "kvm"|"zvm"|"microsoft"|"xen"|"vmware" ]]; then
         wget -N --no-check-certificate "https://raw.githubusercontents.com/chiakge/Linux-NetSpeed/master/tcp.sh" && chmod +x tcp.sh && ./tcp.sh
     elif [ ${virt} == "openvz" ]; then
-        if [[ ! $TUN =~ 'in bad state' ]] && [[ ! $TUN =~ '处于错误状态' ]] && [[ ! $TUN =~ 'Die Dateizugriffsnummer ist in schlechter Verfassung' ]]; then
+        if [[ ! $TUN =~ 'in bad state' ]] && [[ ! $TUN =~ 'Sedang dalam keadaan error.' ]] && [[ ! $TUN =~ 'Pegangan file dalam kondisi buruk' ]]; then
             wget -N --no-check-certificate https://raw.githubusercontents.com/Misaka-blog/tun-script/master/tun.sh && bash tun.sh
         else
             wget -N --no-check-certificate https://raw.githubusercontents.com/mzz2017/lkl-haproxy/master/lkl-haproxy.sh && bash lkl-haproxy.sh
         fi
     else
-        red "抱歉，你的VPS虚拟化架构暂时不支持bbr加速脚本"
+        red "Maaf, arsitektur virtualisasi VPS Anda tidak mendukung skrip akselerasi bbr untuk sementara"
     fi
 }
 
@@ -182,23 +182,23 @@ v6_dns64(){
     v44=`curl -s4m8 https://ip.gs -k`
     if [[ -z $v44 && -n $v66 ]]; then
         echo -e "nameserver 2a01:4f8:c2c:123f::1" > /etc/resolv.conf
-        green "设置DNS64服务器成功！"
+        green "Siapkan server DNS64 dengan sukses!"
     else
-        red "非纯IPv6 VPS，设置DNS64服务器失败！"
+        red "VPS IPv6 non-murni, gagal menyiapkan server DNS64!"
     fi
     wg-quick up wgcf 2>/dev/null
 }
 
 warp_script(){
-    green "请选择你接下来使用的脚本"
+    green "Silakan pilih skrip yang akan Anda gunakan selanjutnya"
     echo "1. Misaka-WARP"
     echo "2. fscarmen"
     echo "3. fscarmen-docker"
-    echo "4. fscarmen warp解锁奈飞流媒体脚本"
+    echo "4. fscarmen warp membuka skrip streaming Netflix"
     echo "5. P3TERX"
-    echo "0. 返回主菜单"
+    echo "0. Kembali ke menu utama"
     echo ""
-    read -rp "请输入选项:" warpNumberInput
+    read -rp "Silakan masukkan opsi:" warpNumberInput
 	case $warpNumberInput in
         1) wget -N https://raw.githubusercontents.com/Misaka-blog/Misaka-WARP-Script/master/misakawarp.sh && bash misakawarp.sh ;;
         2) wget -N https://raw.githubusercontents.com/fscarmen/warp/main/menu.sh && bash menu.sh ;;
@@ -209,6 +209,7 @@ warp_script(){
     esac
 }
 
+# Set Bahasa
 setChinese(){
     chattr -i /etc/locale.gen
     cat > '/etc/locale.gen' << EOF
@@ -242,12 +243,12 @@ aapanel(){
 
 xui() {
     echo "                            "
-    green "请选择你接下来使用的X-ui面板版本"
-    echo "1. 使用X-ui官方原版"
-    echo "2. 使用Misaka魔改版"
-    echo "3. 使用FranzKafkaYu魔改版"
-    echo "0. 返回主菜单"
-    read -rp "请输入选项:" xuiNumberInput
+    green "Silakan pilih versi panel X-ui yang akan Anda gunakan selanjutnya"
+    echo "1. Gunakan versi asli resmi X-ui"
+    echo "2. Gunakan Modifikasi Sihir Misaka"
+    echo "3. Gunakan revisi sihir FranzKafkaYu"
+    echo "0. Kembali ke menu utama"
+    read -rp "Silakan masukkan opsi:" xuiNumberInput
     case "$xuiNumberInput" in
         1) bash <(curl -Ls https://raw.githubusercontents.com/vaxilu/x-ui/master/install.sh) ;;
         2) wget -N --no-check-certificate https://raw.githubusercontents.com/Misaka-blog/x-ui/master/install.sh && bash install.sh ;;
@@ -258,20 +259,20 @@ xui() {
 
 qlpanel(){
     [[ -z $(docker -v 2>/dev/null) ]] && curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun
-    read -rp "请输入将要安装的青龙面板容器名称：" qlPanelName
-    read -rp "请输入外网访问端口：" qlHTTPPort
+    read -rp "Silakan masukkan nama wadah panel Azure Dragon yang akan dipasang：" qlPanelName
+    read -rp "Silakan masukkan port akses jaringan eksternal：" qlHTTPPort
     docker run -dit --name $qlPanelName --hostname $qlPanelName --restart always -p $qlHTTPPort:5700 -v $PWD/QL/config:/ql/config -v $PWD/QL/log:/ql/log -v $PWD/QL/db:/ql/db -v $PWD/QL/scripts:/ql/scripts -v $PWD/QL/jbot:/ql/jbot whyour/qinglong:latest
     wg-quick down wgcf 2>/dev/null
     v66=`curl -s6m8 https://ip.gs -k`
     v44=`curl -s4m8 https://ip.gs -k`
-    yellow "青龙面板安装成功！！！"
+    yellow "Panel Qinglong berhasil dipasang! ! !"
     if [[ -n $v44 && -z $v66 ]]; then
-        green "IPv4访问地址为：http://$v44:$qlHTTPPort"
+        green "Alamat akses IPv4 adalah：http://$v44:$qlHTTPPort"
     elif [[ -n $v66 && -z $v44 ]]; then
-        green "IPv6访问地址为：http://[$v66]:$qlHTTPPort"
+        green "Alamat akses IPv6 adalah：http://[$v66]:$qlHTTPPort"
     elif [[ -n $v44 && -n $v66 ]]; then
-        green "IPv4访问地址为：http://$v44:$qlHTTPPort"
-        green "IPv6访问地址为：http://[$v66]:$qlHTTPPort"
+        green "Alamat akses IPv4 adalah：http://$v44:$qlHTTPPort"
+        green "Alamat akses IPv6 adalah：http://[$v66]:$qlHTTPPort"
     fi
     yellow "请稍等1-3分钟，等待青龙面板容器启动"
     wg-quick up wgcf 2>/dev/null
@@ -280,12 +281,12 @@ qlpanel(){
 serverstatus() {
     wget -N https://raw.githubusercontents.com/cokemine/ServerStatus-Hotaru/master/status.sh
     echo "                            "
-    green "请选择你需要安装探针的客户端类型"
-    echo "1. 服务端"
-    echo "2. 监控端"
-    echo "0. 返回主页"
+    green "Silakan pilih jenis klien yang Anda butuhkan untuk menginstal probe"
+    echo "1. Server"
+    echo "2. Terminal pemantauan"
+    echo "0. Kembali ke halaman rumah"
     echo "                            "
-	read -rp "请输入选项:" menuNumberInput1
+	read -rp "Silakan masukkan opsi:" menuNumberInput1
     case "$menuNumberInput1" in
         1) bash status.sh s ;;
         2) bash status.sh c ;;
@@ -307,32 +308,32 @@ menu(){
     echo -e "# ${GREEN}GitLab${PLAIN}: https://gitlab.com/misaka-blog                    #"
     echo "#############################################################"
     echo ""
-    echo -e " ${GREEN}1.${PLAIN} 系统相关"
-    echo -e " ${GREEN}2.${PLAIN} 面板相关"
-    echo -e " ${GREEN}3.${PLAIN} 节点相关"
-    echo -e " ${GREEN}4.${PLAIN} 性能测试"
-    echo -e " ${GREEN}5.${PLAIN} VPS探针"
+    echo -e " ${GREEN}1.${PLAIN} Sistem terkait"
+    echo -e " ${GREEN}2.${PLAIN} Terkait panel"
+    echo -e " ${GREEN}3.${PLAIN} Node terkait"
+    echo -e " ${GREEN}4.${PLAIN} Pengujian Kinerja"
+    echo -e " ${GREEN}5.${PLAIN} Pemeriksaan VPS"
     echo " -------------"
-    echo -e " ${GREEN}9.${PLAIN} 更新脚本"
-    echo -e " ${GREEN}0.${PLAIN} 退出脚本"
+    echo -e " ${GREEN}9.${PLAIN} Skrip yang diperbarui"
+    echo -e " ${GREEN}0.${PLAIN} Keluar skrip"
     echo ""
-    echo -e "${YELLOW}当前版本${PLAIN}：$version"
-    echo -e "${YELLOW}更新日志${PLAIN}：$version_log"
+    echo -e "${YELLOW}Versi sekarang${PLAIN}：$version"
+    echo -e "${YELLOW}Changelog${PLAIN}：$version_log"
     echo ""
     if [[ -n $v4 ]]; then
-        echo -e "IPv4 地址：$v4  地区：$c4  WARP状态：$w4"
+        echo -e "Alamat IPv4：$v4  Daerah：$c4  Status WARP：$w4"
     fi
     if [[ -n $v6 ]]; then
-        echo -e "IPv6 地址：$v6  地区：$c6  WARP状态：$w6"
+        echo -e "Alamat IPv6：$v6  Daerah：$c6  Status WARP：$w6"
     fi
     if [[ -n $w5p ]]; then
-        echo -e "WireProxy代理端口: 127.0.0.1:$w5p  WireProxy状态: $w5"
+        echo -e "Port proxy WireProxy: 127.0.0.1:$w5p  Status WireProxy: $w5"
         if [[ -n $w5i ]]; then
-            echo -e "WireProxy IP: $w5i  地区: $w5c"
+            echo -e "WireProxy IP: $w5i  Daerah: $w5c"
         fi
     fi
     echo ""
-    read -rp " 请输入选项 [0-9]:" menuInput
+    read -rp " Silakan masukkan opsi [0-9]:" menuInput
     case $menuInput in
         1) menu1 ;;
         2) menu2 ;;
