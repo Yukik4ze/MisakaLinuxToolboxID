@@ -12,12 +12,12 @@ Meskipun tidak banyak fungsi yang dapat saya berikan kepada Anda manajemen satu 
 2. Gunakan klien SSH untuk terhubung ke VPS dan masukkan perintah berikut (jika Anda bukan pengguna root, silakan `sudo -i` untuk mengeskalasi hak istimewa)
 
 ```shell
-wget -N --no-check-certificate https://raw.githubusercontents.com/Misaka-blog/MisakaLinuxToolbox/master/MisakaToolbox.sh && bash MisakaToolbox.sh
+wget -N --no-check-certificate https://raw.githubusercontents.com/Yukik4ze/MisakaLinuxToolboxID/master/MisakaToolboxID.sh && bash MisakaToolboxID.sh
 ```
 
 Setelah lari pertama, pintasan dapat digunakan untuk memulai
 ```bash
-bash MisakaToolbox.sh
+bash MisakaToolboxID.sh
 ```
 
 ## Proposal Fitur Kotak Alat
