@@ -357,23 +357,23 @@ menu1(){
     echo -e "# ${GREEN}GitLab${PLAIN}: https://gitlab.com/misaka-blog                    #"
     echo "#############################################################"
     echo ""
-    echo -e " ${GREEN}1.${PLAIN} 开放系统防火墙端口"
-    echo -e " ${GREEN}2.${PLAIN} 修改登录方式为 root + 密码"
-    echo -e " ${GREEN}3.${PLAIN} Screen 后台任务管理"
-    echo -e " ${GREEN}4.${PLAIN} BBR加速系列脚本"
-    echo -e " ${GREEN}5.${PLAIN} 纯IPv6 VPS设置DNS64服务器"
-    echo -e " ${GREEN}6.${PLAIN} 设置CloudFlare WARP"
-    echo -e " ${GREEN}7.${PLAIN} 下载并安装Docker"
-    echo -e " ${GREEN}8.${PLAIN} Acme.sh 证书申请"
-    echo -e " ${GREEN}9.${PLAIN} CF Argo Tunnel隧道穿透"
-    echo -e " ${GREEN}10.${PLAIN} Ngrok 内网穿透"
-    echo -e " ${GREEN}11.${PLAIN} 修改Linux系统软件源"
-    echo -e " ${GREEN}12.${PLAIN} 切换系统语言为中文"
-    echo -e " ${GREEN}13.${PLAIN} OpenVZ VPS启用TUN模块"
+    echo -e " ${GREEN}1.${PLAIN} Buka port firewall sistem"
+    echo -e " ${GREEN}2.${PLAIN} Ubah metode login menjadi root + kata sandi"
+    echo -e " ${GREEN}3.${PLAIN} Manajemen tugas latar belakang layar"
+    echo -e " ${GREEN}4.${PLAIN} Skrip seri akselerasi BBR"
+    echo -e " ${GREEN}5.${PLAIN} Server DNS64 pengaturan VPS IPv6 murni"
+    echo -e " ${GREEN}6.${PLAIN} Menyiapkan CloudFlare WARP"
+    echo -e " ${GREEN}7.${PLAIN} Unduh dan instal Docker"
+    echo -e " ${GREEN}8.${PLAIN} Permintaan sertifikat Acme.sh"
+    echo -e " ${GREEN}9.${PLAIN} Penetrasi terowongan CF Argo Tunnel"
+    echo -e " ${GREEN}10.${PLAIN} Penetrasi intranet Ngrok"
+    echo -e " ${GREEN}11.${PLAIN} Ubah sumber perangkat lunak sistem Linux"
+    echo -e " ${GREEN}12.${PLAIN} Ganti bahasa sistem ke bahasa Cina"
+    echo -e " ${GREEN}13.${PLAIN} OpenVZ VPS mengaktifkan modul TUN"
     echo " -------------"
-    echo -e " ${GREEN}0.${PLAIN} 返回主菜单"
+    echo -e " ${GREEN}0.${PLAIN} Kembali ke menu utama"
     echo ""
-    read -rp " 请输入选项 [0-13]:" menuInput
+    read -rp " Silakan masukkan opsi [0-13]:" menuInput
     case $menuInput in
         1) open_ports ;;
         2) wget -N --no-check-certificate https://raw.githubusercontents.com/Misaka-blog/rootLogin/master/root.sh && bash root.sh ;;
@@ -405,16 +405,16 @@ menu2(){
     echo -e "# ${GREEN}GitLab${PLAIN}: https://gitlab.com/misaka-blog                    #"
     echo "#############################################################"
     echo ""
-    echo -e " ${GREEN}1.${PLAIN} aapanel面板"
-    echo -e " ${GREEN}2.${PLAIN} x-ui面板"
-    echo -e " ${GREEN}3.${PLAIN} aria2(面板为远程链接)"
-    echo -e " ${GREEN}4.${PLAIN} CyberPanel面板"
-    echo -e " ${GREEN}5.${PLAIN} 青龙面板"
-    echo -e " ${GREEN}6.${PLAIN} Trojan面板"
+    echo -e " ${GREEN}1.${PLAIN} Panel aapanel"
+    echo -e " ${GREEN}2.${PLAIN} Panel x-ui"
+    echo -e " ${GREEN}3.${PLAIN} aria2(Panel untuk tautan jarak jauh)"
+    echo -e " ${GREEN}4.${PLAIN} Panel CyberPanel"
+    echo -e " ${GREEN}5.${PLAIN} Panel Qinglong"
+    echo -e " ${GREEN}6.${PLAIN} Panel Trojan"
     echo " -------------"
-    echo -e " ${GREEN}0.${PLAIN} 返回主菜单"
+    echo -e " ${GREEN}0.${PLAIN} Kembali ke menu utama"
     echo ""
-    read -rp " 请输入选项 [0-6]:" menuInput
+    read -rp " Silakan masukkan opsi [0-6]:" menuInput
     case $menuInput in
         1) aapanel ;;
         2) xui ;;
@@ -442,15 +442,15 @@ menu3(){
     echo ""
     echo -e " ${GREEN}1.${PLAIN} mack-a"
     echo -e " ${GREEN}2.${PLAIN} wulabing v2ray"
-    echo -e " ${GREEN}3.${PLAIN} wulabing xray (Nginx前置)"
-    echo -e " ${GREEN}4.${PLAIN} wulabing xray (Xray前置)"
+    echo -e " ${GREEN}3.${PLAIN} wulabing xray (Nginx Depan)"
+    echo -e " ${GREEN}4.${PLAIN} wulabing xray (Xray Depan)"
     echo -e " ${GREEN}5.${PLAIN} misaka xray"
     echo -e " ${GREEN}6.${PLAIN} teddysun shadowsocks"
     echo -e " ${GREEN}7.${PLAIN} telegram mtproxy"
     echo " -------------"
-    echo -e " ${GREEN}0.${PLAIN} 返回主菜单"
+    echo -e " ${GREEN}0.${PLAIN} Kembali ke menu utama"
     echo ""
-    read -rp " 请输入选项 [0-6]:" menuInput
+    read -rp " Silakan masukkan opsi [0-6]:" menuInput
     case $menuInput in
         1) wget -P /root -N --no-check-certificate "https://raw.githubusercontents.com/mack-a/v2ray-agent/master/install.sh" && chmod 700 /root/install.sh && /root/install.sh ;;
         2) wget -N --no-check-certificate -q -O install.sh "https://raw.githubusercontents.com/wulabing/V2Ray_ws-tls_bash_onekey/master/install.sh" && chmod +x install.sh && bash install.sh ;;
@@ -477,17 +477,17 @@ menu4(){
     echo -e "# ${GREEN}GitLab${PLAIN}: https://gitlab.com/misaka-blog                    #"
     echo "#############################################################"
     echo ""
-    echo -e " ${GREEN}1.${PLAIN} VPS测试 (misakabench)"
-    echo -e " ${GREEN}2.${PLAIN} VPS测试 (bench.sh)"
-    echo -e " ${GREEN}3.${PLAIN} VPS测试 (superbench)"
-    echo -e " ${GREEN}4.${PLAIN} VPS测试 (lemonbench)"
-    echo -e " ${GREEN}5.${PLAIN} VPS测试 (融合怪全测)"
-    echo -e " ${GREEN}6.${PLAIN} 流媒体检测"
-    echo -e " ${GREEN}7.${PLAIN} 三网测速"
+    echo -e " ${GREEN}1.${PLAIN} Tes VPS (misakabench)"
+    echo -e " ${GREEN}2.${PLAIN} Tes VPS (bench.sh)"
+    echo -e " ${GREEN}3.${PLAIN} Tes VPS (superbench)"
+    echo -e " ${GREEN}4.${PLAIN} Tes VPS (lemonbench)"
+    echo -e " ${GREEN}5.${PLAIN} Tes VPS (Tes penuh monster fusi)"
+    echo -e " ${GREEN}6.${PLAIN} Deteksi streaming"
+    echo -e " ${GREEN}7.${PLAIN} Tiga tes kecepatan jaringan"
     echo " -------------"
-    echo -e " ${GREEN}0.${PLAIN} 返回主菜单"
+    echo -e " ${GREEN}0.${PLAIN} Kembali ke menu utama"
     echo ""
-    read -rp " 请输入选项 [0-7]:" menuInput
+    read -rp " Silakan masukkan opsi [0-7]:" menuInput
     case $menuInput in
         1) bash <(curl -Lso- https://cdn.jsdelivr.net/gh/Misaka-blog/misakabench@master/misakabench.sh) ;;
         2) wget -qO- bench.sh | bash ;;
@@ -514,12 +514,12 @@ menu5(){
     echo -e "# ${GREEN}GitLab${PLAIN}: https://gitlab.com/misaka-blog                    #"
     echo "#############################################################"
     echo ""
-    echo -e " ${GREEN}1.${PLAIN} 哪吒面板"
-    echo -e " ${GREEN}2.${PLAIN} 可乐ServerStatus-Horatu"
+    echo -e " ${GREEN}1.${PLAIN} Panel Nezha"
+    echo -e " ${GREEN}2.${PLAIN} ServerStatusCola-Horatu"
     echo " -------------"
-    echo -e " ${GREEN}0.${PLAIN} 返回主菜单"
+    echo -e " ${GREEN}0.${PLAIN} Kembali ke menu utama"
     echo ""
-    read -rp " 请输入选项 [0-2]:" menuInput
+    read -rp " Silakan masukkan opsi [0-2]:" menuInput
     case $menuInput in
         1) curl -L https://raw.githubusercontents.com/naiba/nezha/master/script/install.sh -o nezha.sh && chmod +x nezha.sh && bash nezha.sh ;;
         0) menu ;;
