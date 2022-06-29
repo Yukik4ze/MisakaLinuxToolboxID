@@ -32,82 +32,82 @@ Pengembang akan menambahkannya segera setelah mereka melihatnya~
 Ver 3.0 Menu toolbox refactoring, fungsi asli tidak berubah
 
 <details>
-    <summary>历史更新记录（点击展开）</summary>
+    <summary>Catatan pembaruan riwayat (klik untuk meluaskan)</summary>
     
-Ver 2.1.9 新增Misaka魔改版X-ui脚本
+Ver 2.1.9 Menambahkan Skrip X-ui Modifikasi Misaka
 
-Ver 2.1.8 新增设置中文语言选项和一键换源脚本
+Ver 2.1.8 Menambahkan opsi bahasa Mandarin dan skrip sumber satu klik
     
-Ver 2.1.7 WARP处新增Misaka-WARP脚本
+Script Misaka-WARP ditambahkan ke Ver 2.1.7 WARP
 
-Ver 2.1.6 新增Ngrok脚本
+Ver 2.1.6 Menambahkan skrip Ngrok
 
-Ver 2.1.5 新增放开VPS所有网络端口选项
+Ver 2.1.5 Menambahkan opsi untuk melepaskan semua port jaringan VPS
 
-Ver 2.1.4 修改更新源为GitLab以规避GitHub无故封号
+Ver 2.1.4 Memodifikasi sumber pembaruan ke GitLab untuk menghindari larangan GitHub yang tidak masuk akal
 
-Ver 2.1.3 由于网络跳跃跑路，故将他的脚本替代为Misaka-blog的修复版
+Ver 2.1.3 Mengganti skripnya dengan versi blog Misaka yang diperbaiki karena lompatan jaringan
 
-Ver 2.1.2 增加CloudFlare Argo Tunnel一键脚本
+Ver 2.1.2 Menambahkan skrip satu klik CloudFlare Argo Tunnel
 
-Ver 2.1.1 增加misakabench测试脚本
+Ver 2.1.1 Menambahkan skrip tes misakabench
 
-Ver 2.1.0 2022新年快乐！增加V2ray.Fun面板，集成修改root+密码脚本
+Ver 2.1.0 Selamat Tahun Baru 2022! Menambahkan panel V2ray.Fun, skrip terintegrasi untuk memodifikasi root + kata sandi
 
-Ver 2.0.9 增加Trojan面板，fscarmen的warp流媒体解锁脚本
+Ver 2.0.9 Menambahkan panel Trojan, skrip buka kunci streaming warp fscarmen
 
-Ver 2.0.8 增加青龙面板，修复纯净Debian系统获取不到VPS IP地址的问题
+Ver 2.0.8 Menambahkan panel Qinglong untuk memperbaiki masalah bahwa sistem Debian murni tidak dapat memperoleh alamat IP VPS
 
-Ver 2.0.7 增加脚本运行次数统计，fscarmen的warp docker版脚本
+Ver 2.0.7 Menambahkan statistik pada jumlah skrip yang dijalankan, skrip versi warp docker fscarmen
 
-Ver 2.0.6 增加DD系统选项（选项仅在KVM VPS显示）
+Ver 2.0.6 Menambahkan opsi sistem DD (opsi hanya ditampilkan di KVM VPS)
 
-Ver 2.0.5 添加不同作者的WARP脚本，给予用户更多选择。增加德鸡DiG9网络解决方案
+Ver 2.0.5 Menambahkan skrip WARP dari penulis yang berbeda untuk memberi pengguna lebih banyak pilihan. Tambahkan solusi jaringan Deji DiG9
 
-Ver 2.0.4 增加安装ShadowSocks脚本，BBR支持IBM LinuxONE
+Ver 2.0.4 Menambahkan skrip ShadowSocks, BBR mendukung IBM LinuxONE
 
-Ver 2.0.3.1 解决修复OpenVZ的BBR，TUN模块判断问题
+Ver 2.0.3.1 Memecahkan masalah perbaikan modul BBR dan TUN OpenVZ
 
-Ver 2.0.3 优化系统判断机制，增加本博客的Acme.sh证书申请脚本
+Ver 2.0.3 Mengoptimalkan mekanisme penilaian sistem dan menambahkan skrip aplikasi sertifikat Acme.sh dari blog ini
 
-Ver 2.0.2 删除宝塔开心版脚本，优化BBR判断规则
+Ver 2.0.2 Menghapus skrip Pagoda Happy Edition dan mengoptimalkan aturan penilaian BBR
 
-Ver 2.0.1 新增一些VPS测试脚本
+Ver 2.0.1 Menambahkan beberapa skrip uji VPS
 
-Ver 2.0 重构脚本，详细内容可看Github项目的思维导图
+Skrip refactoring Ver 2.0, untuk detailnya, lihat peta pikiran proyek Github
 
-Ver 1.4.5 新增禁用Oracle系统自带防火墙、Acme.sh和Screen后台任务管理脚本
+Ver 1.4.5 Menambahkan menonaktifkan firewall bawaan sistem Oracle, Acme.sh, dan skrip manajemen tugas latar belakang Layar
 
-Ver 1.4.4 在主菜单提示VPS信息，并新增部署Telegram MTProxy脚本
+Ver 1.4.4 Meminta informasi VPS di menu utama, dan menambahkan skrip untuk menyebarkan Telegram MTProxy
 
-Ver 1.4.3 更新hijk大佬的v2脚本，支持IBM LinuxONE s390x的机器搭建节点
+Ver 1.4.3 Perbarui skrip v2 dari bos hijk untuk mendukung simpul pembuatan mesin dari IBM LinuxONE s390x
 
-Ver 1.4.2 更新脚本，修复jsdelivr无法解析问题
+Ver 1.4.2 Perbarui skrip untuk memperbaiki masalah yang jsdelivr tidak dapat diuraikan
 
-Ver 1.4.1 关于加了探针却没加到菜单的一个小bug的修复
+Ver 1.4.1 Perbaikan bug kecil tentang menambahkan probe tetapi tidak menambahkannya ke menu
 
-Ver 1.4: 添加修改主机名，以及修改一些小问题
+Ver 1.4: Tambahkan dan ubah nama host, dan ubah beberapa masalah kecil
 
-Ver 1.3: 添加可乐的ServerStatus-Horatu探针管理及客户端
+Ver 1.3: Tambahkan manajemen dan klien probe ServerStatus-Horatu Cola
 
-Ver 1.2: 添加流媒体检测，三网测速脚本
+Ver 1.2: Tambahkan deteksi media streaming, tiga skrip uji kecepatan jaringan
 
-Ver 1.1: 添加BBR及宝塔开心版、Docker安装脚本
+Ver 1.1: Tambahkan BBR dan Pagoda Happy Edition, skrip instalasi Docker
 </details>
 
 ## Daftar terima kasih
 
 Terima kasih atas kontribusi mereka untuk lebih meningkatkan skrip
 <details>
-    <summary>点击展开</summary>
+    <summary>Klik untuk memperluas</summary>
 
 BBR(KVM)：https://github.com/ylx2016/Linux-NetSpeed
 
 BBR(OpenVZ)：https://github.com/mzz2017/lkl-haproxy/
 
-WARP脚本：https://github.com/fscarmen/warp
+Skenario WARP：https://github.com/fscarmen/warp
 
-宝塔国际版（aapanel）：https://www.aapanel.com/
+Pagoda Edisi Internasional（aapanel）：https://www.aapanel.com/
 
 X-ui: https://github.com/vaxilu/x-ui
 
@@ -129,46 +129,46 @@ superbench https://github.com/oooldking/script
 
 lemonbench https://blog.ilemonrain.com/linux/LemonBench.html
 
-流媒体检测：https://github.com/lmc999/RegionRestrictionCheck
+Deteksi streaming：https://github.com/lmc999/RegionRestrictionCheck
 
-三网测速：https://github.com/ernisn/superspeed/
+Tiga tes kecepatan jaringan：https://github.com/ernisn/superspeed/
 
-哪吒面板：https://github.com/naiba/nezha
+Panel Nezha：https://github.com/naiba/nezha
 
-可乐 ServerStartus-Horatu：https://github.com/cokemine/ServerStatus-Hotaru
+ServerStartus-Horatu Cola：https://github.com/cokemine/ServerStatus-Hotaru
 
-DD系统：https://www.cxthhhhh.com/network-reinstall-system-modify
+Sistem DD：https://www.cxthhhhh.com/network-reinstall-system-modify
 
-青龙面板：https://github.com/whyour/qinglong
+Panel Qinglong：https://github.com/whyour/qinglong
 
-更换系统语言：https://github.com/johnrosen1/vpstoolbox
+Ubah bahasa sistem：https://github.com/johnrosen1/vpstoolbox
 </details>  
 
-## 赞助我们
+## Mensponsori kami
 
-点击页面上方的Sponsor按钮，赞助我们！  
-你的赞助会帮助工具箱变得更完善！
+Klik tombol Sponsor di bagian atas halaman untuk mensponsori kami!  
+Sponsor Anda akan membantu membuat kotak peralatan menjadi lebih baik!
 
-## 交流群
+## Grup pertukaran
 [Telegram](https://t.me/misakanetcn)
 
-## 防和谐备份仓库
+## Gudang cadangan anti-harmoni
 
 GitHub：https://github.com/Misaka-blog/MisakaLinuxToolbox/
 
 GitLab：https://gitlab.com/misakano7545/MisakaLinuxToolbox
 
 BitBucket：https://bitbucket.org/misakano7545/misakalinuxtoolbox/
-## Stars 增长记录
+## Rekor pertumbuhan Bintang
 
 [![Stargazers over time](https://starchart.cc/Misaka-blog/MisakaLinuxToolbox.svg)](https://starchart.cc/Misaka-blog/MisakaLinuxToolbox)
 
-## Repo 统计
+## Statistik Repo
 ![Alt](https://repobeats.axiom.co/api/embed/2512c745cf3ee94ad15c8e8ada474469e081f1c4.svg "Repobeats analytics image")
 
-## 贡献者
-<a href="https://github.com/Misaka-blog/MisakaLinuxToolbox/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=Misaka-blog/MisakaLinuxToolbox" />
+## Penyumbang
+<a href="https://github.com/Yukik4ze/MisakaLinuxToolboxID/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=Yukik4ze/MisakaLinuxToolboxID" />
 </a>
 
 Made with [contrib.rocks](https://contrib.rocks).
